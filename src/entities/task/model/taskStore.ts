@@ -9,12 +9,18 @@ class TaskStore {
     makeAutoObservable(this);
   }
 
-  addTask(text: string) {
-    this.tasks.push(new Task(text));
+  addTask(content: string) {
+    this.tasks.push(new Task(content));
   }
 
   removeTask(id: number) {
     this.tasks = this.tasks.filter((task) => task.id !== id);
+  }
+
+  toggleTask(id: number) {
+    this.tasks[
+      this.tasks.findIndex((task) => task.id === id)
+    ].toggleCompleted();
   }
 
   get completedTasks() {

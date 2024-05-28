@@ -1,15 +1,18 @@
 import { useState } from "react";
-
-import { addNewTask } from "../model/addNewTask";
+import { addNewTask } from "@/features";
 
 export const useTaskForm = () => {
-  const [newTaskText, setNewTaskText] = useState("");
+  const [newTaskContent, setNewTaskContent] = useState("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setNewTaskText("");
-    addNewTask(newTaskText);
+    setNewTaskContent("");
+    addNewTask(newTaskContent);
   };
 
-  return { newTaskText, setNewTaskText, handleSubmit };
+  return {
+    newTaskContent,
+    setNewTaskContent,
+    handleSubmit,
+  };
 };

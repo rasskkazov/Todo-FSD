@@ -2,11 +2,11 @@ import { makeAutoObservable } from "mobx";
 
 export class Task {
   id = Math.random();
-  text = "";
+  content = "";
   completed = false;
 
-  constructor(text: string) {
-    this.text = text;
+  constructor(content: string) {
+    this.content = content;
     makeAutoObservable(this);
   }
 
