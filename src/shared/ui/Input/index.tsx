@@ -1,20 +1,14 @@
-import { Dispatch, SetStateAction } from "react";
+import { UseFormRegisterReturn } from "react-hook-form";
+
 import * as classes from "./Input.module.scss";
 export const Input = ({
+  register,
   placeholder,
-  onChange,
-  value,
 }: {
-  placeholder: string;
-  onChange: Dispatch<SetStateAction<string>>;
-  value: string;
+  register: UseFormRegisterReturn<string>;
+  placeholder?: string;
 }) => {
   return (
-    <input
-      placeholder={placeholder}
-      className={classes.input}
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
-    />
+    <input className={classes.input} {...register} placeholder={placeholder} />
   );
 };

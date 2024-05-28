@@ -1,19 +1,38 @@
-import { AddTask } from "@/features";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { AddTask, addNewTask } from "@/features";
 import { Input } from "@/shared/ui/Input";
 
-import { useTaskForm } from "../lib/useTaskForm";
 import * as classes from "./TaskForm.module.scss";
 
+type NewTask = {
+  content: string;
+};
+
 export const TaskForm = () => {
-  const { newTaskContent, setNewTaskContent, handleSubmit } = useTaskForm();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<NewTask>();
+
+  const submit: SubmitHandler<NewTask> = (data) => {
+    addNewTask(data.content);
+    reset();
+  };
 
   return (
-    <form className={classes.form} onSubmit={(e) => handleSubmit(e)}>
+    <form className={classes.form} onSubmit={handleSubmit(submit)}>
       <Input
+        register={register("content", {
+          required: { value: true, message: "Task required" },
+          maxLength: { value: 100, message: "Too many symbols" },
+        })}
         placeholder="Add a new task"
-        onChange={setNewTaskContent}
-        value={newTaskContent}
       />
+      {errors.content && (
+        <div className={classes.form__warning}>{errors.content.message}</div>
+      )}
       <AddTask />
     </form>
   );
