@@ -1,1 +1,1 @@
-export { taskStore } from "./task";
+export { taskStore, Task } from "./task";

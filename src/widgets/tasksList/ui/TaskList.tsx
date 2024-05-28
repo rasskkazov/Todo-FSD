@@ -1,16 +1,25 @@
-import { taskStore } from "@/entities";
-import { TaskCard } from "./TaskCard";
-import { observer } from "mobx-react";
+import { Task } from "@/entities";
 
-export const TaskList = observer(() => {
+import { TaskCard } from "./TaskCard";
+import * as classes from "./TaskList.module.scss";
+
+export const TaskList = ({
+  title,
+  tasksList,
+}: {
+  title: string;
+  tasksList: Task[];
+}) => {
   return (
-    <div className="container">
-      <div className="title">{`Tasks to do - ${4}`}</div>
-      <div className="list">
-        {taskStore.incompletedTasks.map((task) => {
-          return <TaskCard id={task.id} content={task.content} key={task.id} />;
-        })}
-      </div>
+    <div className={classes.taskList}>
+      <div className={classes.taskList__title}>{title}</div>
+      <ul>
+        {tasksList.map((task) => (
+          <li key={task.id}>
+            <TaskCard id={task.id} content={task.content} />
+          </li>
+        ))}
+      </ul>
     </div>
   );
-});
+};
