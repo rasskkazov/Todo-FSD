@@ -1,6 +1,6 @@
 import { taskStore } from "@/entities";
 
-export const completeTask = (id: number) => {
+export const toggleTask = (id: number) => {
   taskStore.toggleTask(id);
   console.log(taskStore.incompletedTasks);
 };
