@@ -1,0 +1,14 @@
+@import "@/shared/styles";
+
+.iconBtn {
+  width: 3rem;
+  height: 3rem;
+  padding: 4px;
+  color: $primary;
+  background-color: inherit;
+  border: none;
+
+  @include hover {
+    color: $primary-dark;
+  }
+}
