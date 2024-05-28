@@ -6,11 +6,9 @@ import * as classes from "./TaskList.module.scss";
 export const TaskList = ({
   title,
   tasksList,
-  completed = false,
 }: {
   title: string;
   tasksList: Task[];
-  completed?: boolean;
 }) => {
   return (
     <div className={classes.taskList}>
@@ -18,11 +16,7 @@ export const TaskList = ({
       <ul>
         {tasksList.map((task) => (
           <li key={task.id}>
-            <TaskCard
-              id={task.id}
-              content={task.content}
-              completed={completed}
-            />
+            <TaskCard task={task} />
           </li>
         ))}
       </ul>

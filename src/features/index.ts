@@ -1,2 +1,3 @@
 export { AddTask, addNewTask } from "./addTask";
-export { ToggleTask, toggleTask } from "./toggleTask";
+export { ToggleTask } from "./toggleTask";
+export { RemoveTask } from "./remove";

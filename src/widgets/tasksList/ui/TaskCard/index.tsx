@@ -1,29 +1,21 @@
-import { ToggleTask } from "@/features";
-import { RemoveTask } from "@/features/remove/ui/removeTask";
+import { ToggleTask, RemoveTask } from "@/features";
+import { Task } from "@/entities";
 
 import * as classes from "./TaskCard.module.scss";
 
-export const TaskCard = ({
-  content,
-  id,
-  completed = false,
-}: {
-  content: string;
-  id: number;
-  completed?: boolean;
-}) => {
+export const TaskCard = ({ task }: { task: Task }) => {
   return (
     <div className={classes.card}>
       <div
         className={`${classes.card__content} ${
-          completed ? `${classes.card__content}--completed` : ""
+          task.completed ? `${classes.card__content}--completed` : ""
         }`}
       >
-        {content}
+        {task.content}
       </div>
       <div className={classes.card__actions}>
-        <ToggleTask id={id} completed={completed} />
-        <RemoveTask id={id} />
+        <ToggleTask id={task.id} completed={task.completed} />
+        <RemoveTask id={task.id} />
       </div>
     </div>
   );
