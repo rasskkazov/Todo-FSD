@@ -3,7 +3,7 @@
 .card {
   display: flex;
   justify-content: space-between;
-  max-height: 7.5rem;
+  height: 7.5rem;
   padding: 2.2rem 2rem;
   font-size: 1.6rem;
   background-color: $black-light;
@@ -18,5 +18,12 @@
   &__actions {
     display: flex;
     gap: 0.8rem;
+  }
+}
+
+.completed {
+  &__content {
+    color: $success;
+    text-decoration: line-through;
   }
 }
