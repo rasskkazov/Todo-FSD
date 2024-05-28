@@ -4,11 +4,17 @@
   width: 100%;
   max-height: 4rem;
   padding: 1rem 1.5rem;
+  color: $white;
   font-size: 1.6rem;
+  background-color: inherit;
   border: 1px solid $primary-darker;
   border-radius: 1rem;
 
-  ::placeholder {
+  &::placeholder {
     color: $black-lighter;
+  }
+
+  &:focus {
+    outline: none;
   }
 }
