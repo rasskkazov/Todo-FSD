@@ -1,5 +1,15 @@
 @import "@/shared/styles";
 
 .container {
-  padding: 0 5.6rem;
+  max-width: 43.2rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 7.4rem 5.6rem 0;
+  background-color: $white;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+  }
 }
