@@ -1,4 +1,4 @@
-import { TaskForm } from "@/widgets/taskForm";
+import { TaskForm, TaskList } from "@/widgets";
 
 import * as classes from "./Main.module.scss";
 
@@ -7,6 +7,7 @@ export const Main = () => {
     <div className={classes.container}>
       <div className={classes.content}>
         <TaskForm />
+        <TaskList />
       </div>
     </div>
   );

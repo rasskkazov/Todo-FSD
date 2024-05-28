@@ -1,0 +1,18 @@
+@import "@/shared/styles";
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  height: 7.5rem;
+  padding: 2.2rem 2rem;
+  font-size: 1.6rem;
+
+  &__content {
+    color: $primary;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 0.8rem;
+  }
+}

@@ -9,7 +9,7 @@ export const IconBtn = ({
 }) => {
   return (
     <button className={classes.iconBtn} onClick={onClick}>
-      <Icon />
+      <Icon className={classes.iconBtn__icon} />
     </button>
   );
 };
