@@ -13,10 +13,16 @@ export const TaskCard = ({
   completed?: boolean;
 }) => {
   return (
-    <div className={`${classes.card} ${completed ? "completed" : ""}`}>
-      <div className={classes.card__content}>{content}</div>
+    <div className={classes.card}>
+      <div
+        className={`${classes.card__content} ${
+          completed ? `${classes.card__content}--completed` : ""
+        }`}
+      >
+        {content}
+      </div>
       <div className={classes.card__actions}>
-        <ToggleTask id={id} />
+        <ToggleTask id={id} completed={completed} />
         <RemoveTask id={id} />
       </div>
     </div>

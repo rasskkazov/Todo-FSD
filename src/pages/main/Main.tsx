@@ -16,6 +16,7 @@ export const Main = observer(() => {
         <TaskList
           tasksList={taskStore.completedTasks}
           title={`Done - ${taskStore.completedTasks.length}`}
+          completed={true}
         />
       </div>
     </div>
