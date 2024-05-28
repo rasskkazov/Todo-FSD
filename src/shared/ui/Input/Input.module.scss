@@ -1,0 +1,14 @@
+@import "@/shared/styles";
+
+.input {
+  width: 100%;
+  max-height: 4rem;
+  padding: 1rem 1.5rem;
+  font-size: 1.6rem;
+  border: 1px solid $primary-darker;
+  border-radius: 1rem;
+
+  ::placeholder {
+    color: $black-lighter;
+  }
+}
