@@ -1,5 +1,4 @@
-import { SubmitHandler, useForm } from "react-hook-form";
-import { AddTask, addNewTask } from "@/features";
+import { AddTask } from "@/features";
 import { Input } from "@/shared/ui/Input";
 
 import { useTaskForm } from "../lib/useTaskForm";
@@ -17,9 +16,11 @@ export const TaskForm = () => {
         })}
         placeholder="Add a new task"
       />
+
       {errors.content && (
         <div className={classes.form__warning}>{errors.content.message}</div>
       )}
+
       <AddTask />
     </form>
   );
