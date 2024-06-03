@@ -11,14 +11,18 @@ export const Main = observer(() => {
       <div className={classes.content}>
         <TaskForm />
         <Suspense fallback={<div>Loading...</div>}>
-          <TaskList
-            tasksList={taskStore.incompletedTasks}
-            title={`Tasks to do - ${taskStore.incompletedTasks.length}`}
-          />
-          <TaskList
-            tasksList={taskStore.completedTasks}
-            title={`Done - ${taskStore.completedTasks.length}`}
-          />
+          {!!taskStore.incompletedTasks.length && (
+            <TaskList
+              tasksList={taskStore.incompletedTasks}
+              title={`Tasks to do - ${taskStore.incompletedTasks.length}`}
+            />
+          )}
+          {!!taskStore.completedTasks.length && (
+            <TaskList
+              tasksList={taskStore.completedTasks}
+              title={`Done - ${taskStore.completedTasks.length}`}
+            />
+          )}
         </Suspense>
       </div>
     </div>
