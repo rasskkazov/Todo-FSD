@@ -14,11 +14,11 @@
     align-items: center;
     color: $primary;
     word-break: break-all;
+  }
 
-    &--completed {
-      color: $success;
-      text-decoration: line-through;
-    }
+  &__content--completed {
+    color: $success;
+    text-decoration: line-through;
   }
 
   &__actions {
