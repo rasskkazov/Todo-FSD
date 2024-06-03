@@ -8,7 +8,7 @@ export const TaskCard = ({ task }: { task: Task }) => {
     <div className={classes.card}>
       <div
         className={`${classes.card__content} ${
-          task.completed ? `${classes.card__content}_completed` : ""
+          task.completed ? `${classes.card__content_completed}` : ""
         }`}
       >
         {task.content}
